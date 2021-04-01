@@ -112,4 +112,10 @@ Press Ctrl+C to exit
 ssh -N -f -L localhost:8888:localhost:43800 remoteUser@remoteIP
 ```
 
-after entering your server password, just enter  `[localhost:8888](http://localhost:8888)`  in you local browser. (You could change the port as you desire)
+after entering your server password, just enter  `http://localhost:8888`  in you local browser. (You could change the port as you desire)
+
+sometimes if port is already in use(it might cause blank UI page), just kill it and reconnect
+
+```bash
+lsof -ti:8888 | xargs kill -
+```
